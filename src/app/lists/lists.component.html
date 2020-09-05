@@ -1,0 +1,31 @@
+
+
+<div class="board-header">
+  <!-- <nav>
+    <button class="header-button">Board Name</button>
+    <button class="header-button">Another Button</button>
+  </nav> -->
+</div>
+<br>
+<br>
+<h1>HAMZA</h1>
+<div class="stack">
+  <div class="list" *ngFor="let currentList of board.lists">
+    <h4 class="list-header">{{currentList.title}}</h4>
+    <ul dragula="list-bag">
+      <li *ngFor="let card of currentList.cards" class="list-card">
+        {{card.title}}
+      </li>
+    </ul>
+    <button class="btn new-card-button">
+      <app-cards
+        (clickSender2)="addCards($event,currentList)"
+      ></app-cards>
+    </button>
+  </div>
+  <div>
+    <app-add-list (clickSender)="addList($event)"></app-add-list>
+  </div>
+</div>
+
+

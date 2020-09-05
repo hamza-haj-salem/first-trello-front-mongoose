@@ -1,0 +1,34 @@
+<div class="card textcenter mt-3" [ngClass]="{'add-card': showFormCard}">
+
+    <div class="apt-addheading card-header bg-primary text-white"
+    (click)="toggleCardDisplay()">
+       <!--<fa-icon icon="plus"></fa-icon> -->
+    </div><!-- card-header -->
+  
+    <div class="card-body">
+  
+      <form id="cardForm" novalidate
+      (ngSubmit)="newCard(cardForm.value)"  
+      #cardForm="ngForm"
+      >
+       <!--handleadd hiya newCard -->
+      
+        <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right" for="cardName">Card</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="cardName" id="cardName" placeholder="card's Name" ngModel>
+          </div><!-- col-md-10 --> 
+        </div><!-- form-group --> 
+  
+      
+  
+         <div class="form-group form-row mb-0">
+          <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-primary d-block ml-auto"
+            >Add Card</button>
+          </div><!-- col-md-offset-2 --> 
+        </div><!-- form-group -->
+  
+      </form>
+    </div><!-- card-body -->
+  </div><!-- card-primary -->   

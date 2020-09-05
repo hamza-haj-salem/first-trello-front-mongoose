@@ -1,0 +1,10 @@
+<br>
+<br>
+
+<div class="flex-row">
+    <mat-card *ngFor="let board of boards | async" (click)="boardClicked(board)"
+      [style.background-color]="board.color">
+        <mat-card-title>{{board?.name}}</mat-card-title>
+    </mat-card>
+  <button (click)="createBoard()">Create new Board</button>
+</div>
