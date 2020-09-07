@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BoardService } from './board.service';
 import {DialogService} from '../dialogs/dialog/dialog.service';
-import { Board } from '../models/board.model';
+
 
 @Component({
   selector: 'app-board-list',
@@ -11,8 +11,8 @@ import { Board } from '../models/board.model';
 })
 export class BoardListComponent implements OnInit {
 
-  
   boards;
+  
   constructor(private _router: Router, 
     private _board: BoardService, 
     private _dialog: DialogService) { }
@@ -23,18 +23,20 @@ export class BoardListComponent implements OnInit {
   }
 
   boardClicked(board) {
-    this._router.navigate(['boards', board.id]);
+    this._router.navigate(['boards', board._id]);
+    //this._board.getBoardDetails(board.id);
   }
 
   createBoard() {
-    this._dialog.openPrompt('Create new Board', 'Please enter the title for your new Board:')
+    this._dialog.openPrompt('', '')
       .subscribe((name)=>{
         if(name){
           this._board.createBoard(name).subscribe(()=>this.loadBoards())
         }
       });
   }
+
   loadBoards() {
-    this._board.getBoards().subscribe((data)=>this._board=data);
+    this.boards = this._board.getBoards();
   }
 }

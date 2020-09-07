@@ -11,13 +11,16 @@ export class AddListComponent implements OnInit {
   showForm:boolean;
   @Output() clickSender = new EventEmitter();
 
-  newList(listToCreate: any)  /*  listeToCreate=formInfo */  {
+  newList(listToCreate: any) {
+    /*
     const tempItem :List = {
       title : listToCreate.listeTitle,
       cards:[new Card (listToCreate.cards)],
     };
     this.clickSender.emit(tempItem) ;
     this.showForm = !this.showForm ;
+    */
+   
   }
 
   toggleAjtDisplay(){

@@ -50,7 +50,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+   
 
   ],
   

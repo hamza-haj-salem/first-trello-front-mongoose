@@ -27,7 +27,5 @@ export class CardsComponent {
   }
   constructor() {
     this.showFormCard = true
-   
-
    }
 }
