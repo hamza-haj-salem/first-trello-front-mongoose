@@ -13,7 +13,6 @@ import { title } from 'process';
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit{
- // @Input() childAllLists: List[];
   @Output() clickSender2 = new EventEmitter();
   @Output() clickSender = new EventEmitter();
   showForm:boolean;
@@ -21,21 +20,28 @@ export class ListsComponent implements OnInit{
   board;
   selectedList =  null ;
 
+  deleteCard(currentList,idC){
+    this._board.execDeleteCard(this.id,currentList._id,idC);
+    this.loadBoardDetails();
+    console.log("id List " + currentList._id);
+    console.log("id Card " + idC);
+
+  }
+
+  deleteList(currentList): void {
+    this._board.execDeleteList(this.id,currentList._id);
+    this.loadBoardDetails();
+  }
+
   loadBoardDetails() {
     this._board.getBoardDetails(this.id).subscribe((data) => this.board = data);    
   }
 
-  deleteBoard(): void {
-    this._board.execDeleteBoard(this.id);
-    this._router.navigate(['boards']);
-  }
-
-  createCard(idL){
+  createCard(currentList){
     this._dialog.openPrompt('aaaa', 'bbbb')
     .subscribe((title) => {
       if (title) {
-        this._list.createCard(this.id, idL, title).subscribe(() => this.loadBoardDetails());
-        
+        this._list.createCard(this.id, currentList._id, title).subscribe(() => this.loadBoardDetails()); 
       }
     });
   }
@@ -50,11 +56,10 @@ export class ListsComponent implements OnInit{
   }
 
   constructor(private _activatedRoute: ActivatedRoute,
-     private _board: BoardService,
-      private _router: Router,
-      private _dialog : DialogService,
-      private _list : BoardService,) {
-  }
+    private _board: BoardService,
+    private _router: Router,
+    private _dialog : DialogService,
+    private _list : BoardService,) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe((params) => {

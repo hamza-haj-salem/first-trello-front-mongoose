@@ -26,6 +26,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+import { LoginComponent } from './login/login.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
 
 
 @NgModule({
@@ -36,7 +51,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     DescriptionComponent,
     BoardListComponent,
     NavbarComponent,
-    AddListComponent
+    AddListComponent,
+    LoginComponent
     
   ],
   imports: [
@@ -51,11 +67,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    
+
+   
    
 
   ],
   
   providers: [ BoardService,RestService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    LoginComponent
+  ],
 })
 export class AppModule { }

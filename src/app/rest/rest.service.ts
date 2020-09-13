@@ -17,10 +17,28 @@ executeGet(url: string) {
     ;
 } 
 
+executeUpdate(url: string, data: object){
+    return this._http.put(serverURL+url, data)
+    .map(this.extractData)
+    .catch(this.handleError);
+    
+}
+
 executePost(url: string, data: object) {
     return this._http.post(serverURL + url, data)
     .map(this.extractData)
     .catch(this.handleError);
+}
+
+deleteCard(id: string, idL:string, idC:string){
+    return this._http.delete(serverURL+`/boards/${id}/lists/${idL}/cards/${idC}`)
+    .catch(this.handleError);
+}
+
+deleteList(id: string, idL:string) {
+    return this._http.delete(serverURL+`/boards/${id}/lists/${idL}`)
+    .catch(this.handleError);
+    
 }
 
 deleteBoard(id: string) {

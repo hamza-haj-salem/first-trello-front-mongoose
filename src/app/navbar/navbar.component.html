@@ -1,70 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Trello</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <nav class="navbar navbar-custom">
-    <a href="#" class="home">
-      <img id="home-logo" src="https://image.ibb.co/eWFX7e/home_01.png" class="d-inline-block align-top" alt="">
-    </a>
-    <a  routerLink="/boards" id="boards-nav" class="header-button" >
-      <img  id="boards-logo" src="https://image.ibb.co/eZpBHe/trello_mark_white.png" class="d-inline-block align-top" alt="">
-      Boards
-    </a>
-    <!-- <img id="search" src="https://image.ibb.co/jNGrYK/search.png" class="d-inline-block align-top" alt=""> -->
-    <a class="center" routerLink="/boards" >
-      <img id="trello-logo" src="https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png" width="80" height="30" class="d-inline-block align-top" alt="">
-    </a>
-
-    <div width="80" height="30" class="d-inline-block align-top" alt="">
-        <button >
-            <img id="other-btns" (click)="toggleAjtDisplay()" src="../assets/plus.png">
-            <div class="card textcenter mt-3" [ngClass]="{'add-liste': showForm}">
-
-                <div class="apt-addheading card-header bg-primary text-white"
-                  (click)="toggleAjtDisplay()">
-
-                </div><!-- card-header -->
-              
-                <div class="card-body">
-                  <form id="listeForm" novalidate
-                  (ngSubmit)="newList(listeForm.value)"  
-                  #listeForm="ngForm"
-                  >
-                   <!--handleadd hiya newList -->
-                  
-                    <div class="form-group form-row">
-                      <label class="col-md-2 col-form-label text-md-right" for="listeTitle">listeTitle</label>
-                      <div class="col-md-10"> 
-                        <input type="text" class="form-control" name="listeTitle" id="listeTitle" placeholder="liste's Title" ngModel>
-                      </div><!-- col-md-10 --> 
-                    </div><!-- form-group --> 
-                    <div class="form-group form-row">
-                      <label class="col-md-2 text-md-right" for="cards">Card</label>
-                      <div class="col-md-10">
-                        <input class="form-control" rows="4" cols="50"
-                          name="cards" id="cards" placeholder="Card" ngModel>
-                      </div><!-- col-md-10 --> 
-                    </div> <!--  form-group -->
-                     <div class="form-group form-row mb-0">
-                      <div class="offset-md-2 col-md-10">
-                        <button type="submit" class="btn btn-primary d-block ml-auto">
-                          Add Listeeeee
-                        </button>
-                      </div><!-- col-md-offset-2 --> 
-                    </div><!-- form-group -->
-                  </form>
-                </div><!-- card-body -->
-              </div><!-- card-primary -->
-        </button>
-    </div>
-    
-  </nav>
- 
-</body>
-</html>
+<nav class="navbar navbar-custom">
+  <a href="#" class="home">
+    <img id="home-logo" src="https://image.ibb.co/eWFX7e/home_01.png" class="d-inline-block align-top" alt="">
+  </a>
+  
+  <a routerLink="/boards" id="boards-nav" class="header-button" >
+    <img  id="boards-logo" src="https://image.ibb.co/eZpBHe/trello_mark_white.png" class="d-inline-block align-top" alt="">
+    Boards
+  </a>
+  <!-- <img id="search" src="https://image.ibb.co/jNGrYK/search.png" class="d-inline-block align-top" alt=""> -->
+  <a class="center" routerLink="/boards" >
+    <img (click)="openLoginForm()" id="trello-logo" src="https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png" width="80" height="30" class="d-inline-block align-top" alt="">
+  </a>
+  <img id="other-btns" src="https://image.ibb.co/fdCn7e/other_btns.png" class="d-inline-block align-top" alt="">
+</nav>

@@ -1,23 +1,92 @@
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 
-mat-card {
-  margin: 20px;
-  flex: 1;
-  height: 150px;
-}
-.button{
-  margin: 20px;
-  flex: 1;
-  height: 150px;
-}
 
-mat-card-title {
-  color: #000000;
+mat-card:hover{
+  color: #fff;
   
 }
+
+mat-card {
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  flex: 1;
+  height: 150px;
+  background-color: #E2E4E6;
+  border-radius: 20px;
+}
+
+.image:hover {
+  width: 23px;
+  height: 23px;
+  margin: 2px;
+  z-index: 1;
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0,0,0,.5);
+  object-fit: cover;
+}
+
+.image {
+  width: 23px;
+  height: 23px;
+  margin: 2px;
+
+}
+
+
+
+.btn-details-button:hover {
+  background-color: rgb(201, 200, 241);
+}
+
+.btn-details-button {
+  background-color: none; 
+  border: 2px solid #3498db;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
+  cursor: pointer;
+  color: #f7fafa;
+  transition: 0.8s;
+}
+
+.btn-update-button:hover{
+  background-color:#448844;
+  color:#fff; 
+}
+
+.btn-update-button{
+  background-color: none;
+  border: 2px solid #3498db;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: "montserrat";
+  cursor: pointer;
+  color: #f7fafa;
+  transition: 0.8s;
+}
+
+.btndel:hover{
+  background-color: #FF0000;
+  color:#fff;
+}
+
+.btndel{
+  background-color: none;
+  border: 2px solid #3498db;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
+  cursor: pointer;
+  color: #f7fafa;
+  transition: 0.8s;
+}
+
+
 
 
 

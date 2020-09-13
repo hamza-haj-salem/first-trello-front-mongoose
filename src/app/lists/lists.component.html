@@ -1,34 +1,67 @@
-<h4>Board number {{id}}</h4>
-<button class="apt-addheading card-header bg-primary text-white" (click)="createList()">+ Add another list</button>
-<button class="apt-addheading card-header bg-danger text-white" (click)="deleteBoard()">* Delete Board</button>
-<!-- <mat-card *ngFor="let list of board?.lists">
-    <h3>{{list.title}}</h3>
-    <mat-list >
-        <mat-list-item *ngFor="let card of list?.cards">
-            {{card.title}}
-        </mat-list-item>
-    </mat-list> 
-</mat-card>
-<button mat-button (click)="createList()">Create new List</button> -->
- <!-- <div > 
-    <div class="list" *ngFor="let currentList of  board?lists">
-      <h4 class="list-header">{{currentList.name}}</h4>
-      <ul >
-        <li *ngFor="let card of currentList?.cards" class="list-card">
-          {{card.title}}
-        </li>
-      </ul>
-      <button class="btn new-card-button">+ Add a card</button>
-    </div>
- </div> -->
-<div class="stack" dragula="list-bag">
-  <div class="list" *ngFor="let currentList of  board?.lists">
-    <h4 class="list-header">{{currentList.title}}</h4>
-    <ul dragula="list-bag">
-      <li *ngFor="let card of currentList?.cards" class="list-card">
-        {{card.title}}
-      </li>
-    </ul>
-    <button (click)="createCard(currentList)" class="btn new-card-button">+ Add a card</button>
-  </div>
+<div class="board-header">
+  <!-- <nav>
+    <button class="header-button">Board Name</button>
+    <button class="header-button">Another Button</button>
+  </nav> -->
 </div>
+
+<!--
+
+<mat-grid-list cols="3" rowHeight="2:1" >
+  <mat-grid-tile *ngFor="let currentList of board?.lists">
+    <mat-card>
+      <mat-card-header>
+        {{currentList.title}}
+        <img (click)="createCard(board)" class="image" src="./../assets/images/add.png">
+        <img (click)="deleteList(board)" class="image" src="./../assets/images/supp.PNG">
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+        <div dragula="list-bag">
+          <li *ngFor="let card of currentList.cards" class="list-card">
+            {{card.title}}
+            <img (click)="deleteCard(currentList,card._id)" class="image" src="./../assets/images/supprimer.png">
+          </li>   
+        </div>
+      </ul>
+      </mat-card-content>
+
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<button (click)="createList()" float="right" class="btn-new-list-button">+ Add another list</button>
+
+
+
+-->
+
+
+
+<div class="stack" >
+  
+
+  <div class="list" *ngFor="let currentList of board?.lists">
+    <div class="item"> 
+      <h4 class="list-header">{{currentList.title}}</h4>
+      <hr>
+      <div class="container">
+        <img (click)="createCard(currentList)" class="image" src="./../assets/images/add.png">
+        <img (click)="deleteList(currentList)" class="image" src="./../assets/images/supp.PNG">
+      </div>
+      <hr>
+      <ul>
+        <div dragula="list-bag">
+          <li *ngFor="let card of currentList.cards" class="list-card">
+            {{card.title}}
+            <img (click)="deleteCard(currentList,card._id)" class="image" src="./../assets/images/supprimer.png">
+          </li>   
+        </div>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<button (click)="createList()" float="right" class="btn-new-list-button">+ Add another list</button>
+
