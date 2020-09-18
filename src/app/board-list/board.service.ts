@@ -20,12 +20,18 @@ export class BoardService {
     return this._rest.executeGet(/board/${id}).filter((b) => b.id === id)[0];
   } */
 
+
+  addUser(user){
+    console.log("board serv" +user);
+    return this._rest.executePost("/users/signup", { user });
+  }
+
   createCard(id: string,idL: string,title:string): Observable<Card>{
     return this._rest.executePost(`/boards/${id}/lists/${idL}`, {title});
   }
 
   createList(id: string, title: string): Observable<Board> {
-    return this._rest.executePost(`/boards/${id}`, {title});
+    return this._rest.executePost(`/boards/${id}`, { title });
      // .catch(this.handleError)
   }
 

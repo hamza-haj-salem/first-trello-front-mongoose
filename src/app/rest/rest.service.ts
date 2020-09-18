@@ -5,6 +5,7 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/Rx';
 import { Board } from '../models/board.model';
 const serverURL = 'http://localhost:3000';
+
 @Injectable()
 export class RestService {
 constructor(private _http: Http) { }
@@ -25,7 +26,8 @@ executeUpdate(url: string, data: object){
 }
 
 executePost(url: string, data: object) {
-    return this._http.post(serverURL + url, data)
+    console.log("rest serv "+data)
+    return this._http.post(serverURL+url, data)
     .map(this.extractData)
     .catch(this.handleError);
 }

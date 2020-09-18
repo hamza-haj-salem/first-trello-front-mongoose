@@ -129,20 +129,46 @@ mat-card {
   border-radius: 20px;
 }
 
-.image:hover {
+
+
+
+.image {
   width: 23px;
   height: 23px;
-  margin: 2px;
+  margin-left: 35px;
+}
+
+
+.image:hover {
   z-index: 1;
   transform: scale(1.25);
   box-shadow: 0 25px 40px rgba(0,0,0,.5);
   object-fit: cover;
 }
 
-.image {
+.image1 {
   width: 23px;
   height: 23px;
-  margin: 2px;
-
+  margin-left: 3cm;
 }
 
+.image1:hover {
+  z-index: 1;
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0,0,0,.5);
+  object-fit: cover;
+}
+
+
+.image2 {
+  width: 23px;
+  height: 23px;
+  margin: 5px;
+}
+
+.image2:hover {
+  z-index: 1;
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0,0,0,.5);
+  object-fit: cover;
+}

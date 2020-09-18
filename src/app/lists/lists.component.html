@@ -40,14 +40,14 @@
 
 <div class="stack" >
   
-
+  <mat-grid-list cols="3" rowHeight="2:1" >
   <div class="list" *ngFor="let currentList of board?.lists">
     <div class="item"> 
       <h4 class="list-header">{{currentList.title}}</h4>
       <hr>
       <div class="container">
-        <img (click)="createCard(currentList)" class="image" src="./../assets/images/add.png">
-        <img (click)="deleteList(currentList)" class="image" src="./../assets/images/supp.PNG">
+        <img (click)="createCard(currentList)" class="image1" src="./../assets/images/add.png">
+        <img (click)="deleteList(currentList)" class="image2" src="./../assets/images/supp.PNG">
       </div>
       <hr>
       <ul>
@@ -60,7 +60,7 @@
       </ul>
     </div>
   </div>
-
+</mat-grid-list>
 </div>
 
 <button (click)="createList()" float="right" class="btn-new-list-button">+ Add another list</button>

@@ -37,10 +37,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
-
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
-
 
 
 @NgModule({
@@ -74,7 +71,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatDialogModule,
     MatCheckboxModule,
-    
+    FormsModule
 
    
    

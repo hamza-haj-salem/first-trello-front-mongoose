@@ -1,9 +1,12 @@
-.container {
-  margin: -12px;
+.containerr {
+  margin: 0px;
   max-width: 400px;
-  background-color: #444546;
+  background-color: lightblue;
 }
 
 
+
+.mat-dialog-container {
   
-  
+  display: contents;
+}

@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { BoardService } from './board.service';
 import {DialogService} from '../dialogs/dialog/dialog.service';
 
-
 @Component({
   selector: 'app-board-list',
   templateUrl: './board-list.component.html',
